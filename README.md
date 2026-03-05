@@ -13,10 +13,6 @@ This is a data-only repository. It includes:
 - converted tabular files used by the project schema,
 - processed matrices/arrays used by recommender training and inference.
 
-The modeling and application code remain in:
-
-`https://github.com/AhmedDonkol/hybrid_recommander_system`
-
 ## Data Inventory
 
 | File | Type | Role |
@@ -29,7 +25,6 @@ The modeling and application code remain in:
 | `data/user_taggedartists-timestamps.dat` | Raw table | Tagging timestamps |
 | `data/user_friends.dat` | Raw table | User friendship links |
 | `data/readme.txt` | Raw doc | Dataset README distributed with HetRec |
-| `data/prepare_lastfm_data.py` | Processing script | Converts raw LastFM tables into project schema |
 | `data/Music Info.csv` | Derived table | Item metadata/features in project schema |
 | `data/User Listening History.csv` | Derived table | User-item interaction table in project schema |
 | `data/cleaned_data.csv` | Derived table | Cleaned metadata for downstream modeling |
@@ -43,19 +38,6 @@ The modeling and application code remain in:
 Processing lineage is documented in detail in:
 
 - [DATA_PROVENANCE.md](DATA_PROVENANCE.md)
-
-## Reproducibility Workflow
-
-From the code repository root (`hybrid_recommander_system`):
-
-```bash
-python data/prepare_lastfm_data.py
-python src/data_cleaning.py
-python src/content_based_filtering.py
-python src/collaborative_based_filtering.py
-```
-
-Expected outputs are the derived files listed above.
 
 ## License and Usage
 
